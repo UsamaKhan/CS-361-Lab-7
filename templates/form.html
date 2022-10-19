@@ -5,5 +5,36 @@
     <title>BMI</title>
 </head>
 <body>
+    <form action="/" method="get">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Welcome!</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ft">Height (ft):</label>
+                    <input type="text" id="ft" name="ft">
+                    <label for="in"> (in):</label>
+                    <input type="text" id="in" name="in">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="weight">Weight (lb): </label>
+                    <input type="text" name="weight" id="weight">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p>Your BMI is {{ bmi }}</p>
+    {% for m in message %}
+        <p>{{ m }}</p>
+    {% endfor %}
 </body>
 </html>
